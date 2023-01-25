@@ -1,4 +1,6 @@
 ---
+  collections:
+  - name: ansible.windows
   - name: Run multi-lined shell commands
     ansible.windows.win_shell: |
       $value = Test-Path -Path C:\temp
