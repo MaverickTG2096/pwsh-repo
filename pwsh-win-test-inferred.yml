@@ -6,4 +6,4 @@
       script: file/hello-world.ps1
       register: pwsh_output
     - debug:
-        msg: pwsh_output
+        msg: "{{ pwsh_output.stdout }}"
