@@ -2,7 +2,7 @@
   hosts: all 
   gather_facts: false
   collections:
-  - name: ansible.windows
+  - name: community.windows
   tasks:
     - name: Run multi-lined shell commands
       ansible.windows.win_powershell: |
