@@ -1,7 +1,7 @@
 - name: Hello World Sample
   hosts: all
   collections:
-  - ansible.windows
+  - name: ansible.windows
   tasks:
     - name: Run basic PowerShell script
       ansible.windows.win_powershell:
