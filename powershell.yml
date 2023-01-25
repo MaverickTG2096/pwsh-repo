@@ -22,4 +22,4 @@ tasks:
       parameters:
         Path: C:\temp
         Force: true
-  }
+  
