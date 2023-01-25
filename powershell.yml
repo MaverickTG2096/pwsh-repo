@@ -1,24 +1,25 @@
 ---
 hosts: all
-- name: Run basic PowerShell script
-  ansible.windows.win_powershell:
-    script: |
-      echo "Hello World"
+tasks:
+  - name: Run basic PowerShell script
+    ansible.windows.win_powershell:
+      script: |
+        echo "Hello World"
 
-- name: Run PowerShell script with parameters
-  ansible.windows.win_powershell:
-    script: |
-      [CmdletBinding()]
-      param (
-          [String]
-          $Path,
+  - name: Run PowerShell script with parameters
+    ansible.windows.win_powershell:
+      script: |
+        [CmdletBinding()]
+        param (
+            [String]
+            $Path,
 
-          [Switch]
-          $Force
-      )
+            [Switch]
+            $Force
+        )
 
-      New-Item -Path $Path -ItemType Directory -Force:$Force
-    parameters:
-      Path: C:\temp
-      Force: true
-}
+        New-Item -Path $Path -ItemType Directory -Force:$Force
+      parameters:
+        Path: C:\temp
+        Force: true
+  }
