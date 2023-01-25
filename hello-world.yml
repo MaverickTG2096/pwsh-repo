@@ -1,9 +1,7 @@
 - name: Hello World Sample
   hosts: all
   collections:
-    - name: ansible.windows
-      version: 1.12.0
-      type: galaxy
+    - ansible.windows
   tasks:
     - name: Run basic PowerShell script
       ansible.windows.win_shell:
