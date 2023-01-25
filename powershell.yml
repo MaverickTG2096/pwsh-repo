@@ -1,27 +1,8 @@
-- name: Hello World Sample
-  hosts: all
-  collections:
-  - ansible.windows
-  tasks:
-    - name: Run basic PowerShell script
-      ansible.windows.win_shell:
-        script: |
-          echo "Hello World"
-
-    - name: Run PowerShell script with parameters
-      ansible.windows.win_powershell:
-        script: |
-          [CmdletBinding()]
-          param (
-              [String]
-              $Path,
-
-              [Switch]
-              $Force
-          )
-
-          New-Item -Path $Path -ItemType Directory -Force:$Force
-        parameters:
-          Path: C:\temp
-          Force: true
-  
+---
+  - name: Run multi-lined shell commands
+    ansible.windows.win_shell: |
+      $value = Test-Path -Path C:\temp
+      if ($value) {
+          Remove-Item -Path C:\temp -Force
+      }
+      New-Item -Path C:\temp -ItemType Directory
