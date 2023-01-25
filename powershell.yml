@@ -1,10 +1,13 @@
-- name: ansible.windows
-
-tasks:
-  - name: Run multi-lined shell commands
-    ansible.windows.win_shell: |
-      $value = Test-Path -Path C:\temp
-      if ($value) {
-          Remove-Item -Path C:\temp -Force
-      }
-      New-Item -Path C:\temp -ItemType Directory
+- name: Run powershell script
+  hosts: all 
+  gather_facts: false
+  collections:
+  - name: ansible.windows
+  tasks:
+    - name: Run multi-lined shell commands
+      ansible.windows.win_shell: |
+        $value = Test-Path -Path C:\temp
+        if ($value) {
+            Remove-Item -Path C:\temp -Force
+        }
+        New-Item -Path C:\temp -ItemType Directory
