@@ -2,3 +2,6 @@ az monitor diagnostic-settings create --resource {ID} -n {name} --storage-accoun
 
 
 Set-AzVMDiagnosticsExtension -ResourceGroupName "ResourceGroup1" -VMName "VirtualMachine2" -DiagnosticsConfigurationPath diagnostics_publicconfig.xml -StorageAccountName "MyStorageAccount"
+
+
+https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_user_module.html#ansible-collections-ansible-windows-win-user-module
