@@ -1,0 +1,1 @@
+az monitor diagnostic-settings create --resource {ID} -n {name} --storage-account {storageAccount} --logs "[{category:WorkflowRuntime,enabled:true,retention-policy:{enabled:false,days:0}}]" --metrics "[{category:WorkflowRuntime,enabled:true,retention-policy:{enabled:false,days:0}}]"
